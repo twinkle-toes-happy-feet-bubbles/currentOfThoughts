@@ -1,0 +1,70 @@
+baseurl = "/"
+languageCode = "en-us"
+theme = "terminal"
+[pagination]
+  pagerSize = 5
+
+[params]
+  contentTypeName = "posts"
+  showMenuItems = 2
+  showLanguageSelector = false
+  fullWidthTheme = false
+  centerTheme = false
+  autoCover = true
+  showLastUpdated = false
+
+[params.twitter]
+  creator = "notprajyoth" # Added your Twitter handle
+  site = "" # You can add a site-wide Twitter handle here if you have one for the blog
+
+[languages]
+  [languages.en]
+    languageName = "English"
+    title = "Current of Thoughts"
+
+    [languages.en.params]
+      subtitle = "Exploring the Stream of Consciousness"
+      owner = "Prajyoth Reddy" # Updated with your name
+      keywords = "thoughts, poems, rants, tech, ideas, discoveries"
+      copyright = "© 2025 Prajyoth Reddy. All rights reserved." # Updated with your name and current year
+      menuMore = "More"
+      readMore = "Continue Reading"
+      readOtherPosts = "Explore More Thoughts"
+      newerPosts = "Recent Currents"
+      olderPosts = "Past Currents"
+      missingContentMessage = "The current of thought seems to have run dry here..."
+      missingBackButtonLabel = "Return to the Flow"
+      minuteReadingTime = "min"
+      words = "words"
+
+      [languages.en.params.logo]
+        logoText = "Current of Thoughts"
+        logoHomeLink = "/"
+
+      [languages.en.menu]
+        [[languages.en.menu.main]]
+          identifier = "home"
+          name = "Home"
+          url = "/"
+          weight = 1
+
+        #[[languages.en.menu.main]]
+        #  identifier = "about"
+        #  name = "About"
+        #  url = "/about"
+        #  weight = 2
+
+        # You can add or modify menu items as needed
+        # Example for a specific category:
+        # [[languages.en.menu.main]]
+        #   identifier = "tech"
+        #   name = "Tech Stream"
+        #   url = "/tags/tech/" # Assuming you use tags for categories
+        #   weight = 3
+
+        # Example for a contact page:
+        # [[languages.en.menu.main]]
+        #   identifier = "contact"
+        #   name = "Contact"
+        #   url = "/contact"
+        #   weight = 4
