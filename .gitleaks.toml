@@ -1,0 +1,42 @@
+# Gitleaks configuration file for secret detection
+title = "Gitleaks Config for CurrentOfThoughts"
+
+[extend]
+# Use default gitleaks rules
+useDefault = true
+
+[rules]
+  [[rules]]
+  description = "API Key"
+  regex = '''(?i)(api[_-]?key|apikey)[\s]*[:=][\s]*['"]?([a-zA-Z0-9_\-]{16,})['"]?'''
+  tags = ["key", "api"]
+
+  [[rules]]
+  description = "Secret Key"
+  regex = '''(?i)(secret[_-]?key|secretkey)[\s]*[:=][\s]*['"]?([a-zA-Z0-9_\-]{16,})['"]?'''
+  tags = ["key", "secret"]
+
+  [[rules]]
+  description = "Access Token"
+  regex = '''(?i)(access[_-]?token|accesstoken)[\s]*[:=][\s]*['"]?([a-zA-Z0-9_\-]{16,})['"]?'''
+  tags = ["key", "token"]
+
+  [[rules]]
+  description = "Private Key"
+  regex = '''-----BEGIN[\s]+(RSA|EC|OPENSSH|DSA)?[\s]*PRIVATE[\s]+KEY-----'''
+  tags = ["key", "private"]
+
+[allowlist]
+  description = "Allow CSS files and generated content"
+  paths = [
+    '''public/css/.*\.css''',
+    '''themes/.*''',
+    '''\.hugo_build\.lock''',
+  ]
+
+  # Allow common false positives
+  regexes = [
+    '''getBoundingClientRect''',
+    '''getElementById''',
+    '''querySelector''',
+  ]
